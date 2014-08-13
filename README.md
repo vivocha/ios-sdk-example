@@ -11,7 +11,6 @@ You can find the documentation [here](http://docs.vivocha.com/display/VVCJ/iOS+S
 ![Alt text](/screenshots/app_example_b.png?raw=true "Second View Controller")
 
 ## If a user taps on the Live Help side tab a chat will appear.
-![Alt text](/screenshots/chat_loading.png?raw=true "Chat View - Connecting")
 ![Alt text](/screenshots/chat_loading_waiting.png?raw=true "Chat View - Waiting for an agent")
 ![Alt text](/screenshots/chat.png?raw=true "Chat View - Chatting")
 
