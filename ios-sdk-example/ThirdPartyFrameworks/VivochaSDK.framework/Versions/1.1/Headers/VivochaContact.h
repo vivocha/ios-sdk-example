@@ -89,4 +89,7 @@ typedef void (^VivochaChatConnectionStateBlock) (VivochaConnectionState state);
  */
 - (VivochaAgent *) agent;
 
+
+- (BOOL) isWaitingForTransfer;
+
 @end

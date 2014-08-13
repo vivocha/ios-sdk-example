@@ -67,6 +67,13 @@
 + (void) setDataCollection:(VivochaDataCollection *)dataCollection;
 
 /**
+ *  Returns the data collection that was previously set.
+ *
+ *  @return a VivochaDataCollection object..
+ */
++ (VivochaDataCollection *) getDataCollection;
+
+/**
  *  Set the contact color that the agent will see when a new contact has been started from the current application.
  *
  *  @param color A VivochaContactColor value (e.g. VivochaContactColorOrange);
@@ -81,6 +88,21 @@
  */
 
 + (void) setTheme:(VivochaTheme *)theme;
+
+
+/**
+ *  Enables/Disables the developer mode.
+ *
+ *  @param enable YES if you want to enable the dev mode, NO otherwise.
+ */
++ (void) setDeveloperMode:(BOOL) enable;
+
+/**
+ *  Returns YES if the developer mode is enabled.
+ */
+- (BOOL) getDeveloperMode;
+
++ (BOOL) isShowingSideTab;
 
 /**
  *  Returns your local theme that was set by the setTheme: method.
@@ -142,5 +164,6 @@
  *  @param block      the action block.
  */
 - (void) bindAction:(NSString *)actionName withBlock:(void (^)(VivochaCustomAction *action))block;
+
 
 @end

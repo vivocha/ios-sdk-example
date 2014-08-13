@@ -18,6 +18,10 @@ typedef enum {
     
     VivochaDataCollectionFieldTypeNickname, //string that contains the user nickname
     
+    VivochaDataCollectionFieldTypeFirstName, //string
+    
+    VivochaDataCollectionFieldTypeLastName, //string
+    
     VivochaDataCollectionFieldTypeNumber, // string that contains a number
     
     VivochaDataCollectionFieldTypePhone, //string that contains a phone number
@@ -27,7 +31,7 @@ typedef enum {
     VivochaDataCollectionFieldTypeCheckbox, // string that contains a bool
     
     VivochaDataCollectionFieldTypePassword, // string
-    
+
 } VivochaDataCollectionFieldType;
 
 @interface VivochaDataCollectionField : NSObject

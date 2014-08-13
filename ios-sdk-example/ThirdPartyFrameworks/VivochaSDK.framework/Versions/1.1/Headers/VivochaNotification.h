@@ -37,6 +37,9 @@
  */
 + (void) postVivochaNotificationWithName:(NSString *)in_name andPayload:(id)in_payload andError:(NSError *)in_error;
 
+
++ (BOOL) isVivochaNotification:(NSDictionary *) notificationUserInfo;
+
 @end
 
 

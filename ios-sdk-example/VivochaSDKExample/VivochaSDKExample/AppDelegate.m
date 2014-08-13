@@ -24,9 +24,11 @@
     
     AViewController *avc = [AViewController new];
     avc.title = @"A";
-    
+    avc.tabBarItem.image = [UIImage imageNamed:@"layer"];
+
     BViewController *bvc = [BViewController new];
     bvc.title = @"B";
+    bvc.tabBarItem.image = [UIImage imageNamed:@"cloud"];
 
     UITabBarController *tabBarController = [UITabBarController new];
     [tabBarController setViewControllers:@[avc, bvc]];
@@ -44,7 +46,6 @@
     
     //You will find a string like this one in your iOS Service Settings
     [Vivocha startWithAccountID:@"YOUR_ACCOUNT_ID" andServID:@"IOS_SERVICE_ID"];
-    
   
     //During a contact you can send an action from the Agent Desktop
     //using !action|TestAction|[{"controller":"A"}]

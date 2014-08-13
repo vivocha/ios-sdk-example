@@ -77,6 +77,7 @@ typedef NS_ENUM(NSInteger, VivochaConnectionState){
     VivochaConnectionStateDisconnectedWithTimeout = 5,
     VivochaConnectionStateDisconnectedWithError = 6,
     VivochaConnectionStateDisconnected = 7,
+    VivochaConnectionStateTransferring = 8,
 };
 
 typedef NS_ENUM(NSInteger, VivochaChatPresenceType){
