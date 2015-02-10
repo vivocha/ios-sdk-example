@@ -45,7 +45,7 @@
     //Be sure to set the right bundle identifier (e.g. In this project the bundle id is com.vivocha.sdkesample)
     
     //You will find a string like this one in your iOS Service Settings
-    [Vivocha startWithAccountID:@"YOUR_ACCOUNT_ID" andServID:@"IOS_SERVICE_ID"];
+    [Vivocha startWithAccountID:@"cdmike" andServID:@"665fe657468b6a63eb17156a0c5cc1aa"];
   
     //During a contact you can send an action from the Agent Desktop
     //using !action|TestAction|[{"controller":"A"}]

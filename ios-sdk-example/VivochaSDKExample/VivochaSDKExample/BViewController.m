@@ -7,6 +7,7 @@
 //
 
 #import "BViewController.h"
+#import <VivochaSDK/VivochaSDK.h>
 
 @interface BViewController ()
 
@@ -29,7 +30,33 @@
     // Do any additional setup after loading the view.
     
     [self.view setBackgroundColor:[UIColor orangeColor]];
+    
+    UIButton *btnVideo = [[UIButton alloc] init];
+    [btnVideo setTitle:@"Start a Video Call" forState:UIControlStateNormal];
+    [btnVideo.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
+    
+    
+    [btnVideo addTarget:self action:@selector(doStartVideo) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btnVideo sizeToFit];
+    [self.view addSubview:btnVideo];
+    
+    btnVideo.center = self.view.center;
+}
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void) doStartVideo{
+    [Vivocha createVideoChatWithDataCollection:nil andCompletionBlock:^(VivochaContact *contact)  {
+        if(contact){
+            NSLog(@"Video Chat created...");
+        }
+        else{
+            NSLog(@"There was an error creating the Video Chat");
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
