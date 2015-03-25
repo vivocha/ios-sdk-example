@@ -46,7 +46,7 @@
     
     //You will find a string like this one in your iOS Service Settings
     [Vivocha startWithAccountID:@"YOUR_ACCOUNT_ID" andServID:@"IOS_SERVICE_ID"];
-  
+
     //During a contact you can send an action from the Agent Desktop
     //using !action|TestAction|[{"controller":"A"}]
     
@@ -65,9 +65,15 @@
         }
     }];
     
-    //If you want to enable Push notifications please implement the three methods you find below and call the following
-    [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-
+    if (NSFoundationVersionNumber <= NSFoundationVersionNumber_iOS_7_1) {
+        //If you want to enable Push notifications please implement the three methods you find below and call the following
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    }
+    else{
+        UIUserNotificationSettings *s = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound) categories:nil];
+        [application registerUserNotificationSettings:s];
+        [application registerForRemoteNotifications];
+    }
     
     return YES;
 }
