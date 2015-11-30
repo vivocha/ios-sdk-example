@@ -43,22 +43,47 @@
 #endif
 
 
+#ifndef __IPHONE_8_3
+
 #ifndef UI_USER_INTERFACE_IDIOM
 #define UI_USER_INTERFACE_IDIOM() UIUserInterfaceIdiomDesktop
 
-typedef enum
+typedef NS_ENUM(NSInteger, UIUserInterfaceIdiom)
 {
+    UIUserInterfaceIdiomUnspecified = -1,
     UIUserInterfaceIdiomPhone,
     UIUserInterfaceIdiomPad,
     UIUserInterfaceIdiomDesktop
-}
-UIUserInterfaceIdiom;
+};
 
-#elif defined(__IPHONE_OS_VERSION_MAX_ALLOWED)
+#endif
+
+#endif
+
+#if TARGET_OS_IPHONE
 
 #define UIUserInterfaceIdiomDesktop (UIUserInterfaceIdiomPad + 1)
 
 #endif
+
+
+
+//#ifndef UI_USER_INTERFACE_IDIOM
+//#define UI_USER_INTERFACE_IDIOM() UIUserInterfaceIdiomDesktop
+//
+//typedef enum
+//{
+//    UIUserInterfaceIdiomPhone,
+//    UIUserInterfaceIdiomPad,
+//    UIUserInterfaceIdiomDesktop
+//}
+//UIUserInterfaceIdiom;
+//
+//#elif defined(__IPHONE_OS_VERSION_MAX_ALLOWED)
+//
+//#define UIUserInterfaceIdiomDesktop (UIUserInterfaceIdiomPad + 1)
+//
+//#endif
 
 
 static NSString *const SPPhoneSuffix = @"~iphone";
